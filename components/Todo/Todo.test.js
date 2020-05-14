@@ -3,21 +3,7 @@ import ReactDOM from 'react-dom'
 import { mount } from 'enzyme'
 import IconButton from '@material-ui/core/IconButton'
 import Todo from './Todo'
-
-const mockTodo = [
-  {
-    userId: 1,
-    id: 1,
-    title: 'delectus aut autem',
-    completed: false,
-  },
-  {
-    userId: 1,
-    id: 2,
-    title: 'quis ut nam facilis et officia qui',
-    completed: false,
-  },
-]
+import mockTodo from '../../mocks/todos'
 
 describe('<Todo />', () => {
   const fieldProps = {

@@ -19,6 +19,7 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
     it: 'readonly',
     beforeAll: 'readonly',
+    afterAll: 'readonly',
     expect: 'readonly',
     describe: 'readonly',
     jest: 'readonly',

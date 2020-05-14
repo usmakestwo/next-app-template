@@ -25,6 +25,7 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!**/coverage/**',
+    '!**/mocks/**',
   ],
 
   // The directory where Jest should output its coverage files
@@ -34,6 +35,7 @@ module.exports = {
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/coverage/',
+    '/mocks/',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports

@@ -52,7 +52,7 @@ function IndexPage() {
             {isLoading ? <CircularProgress />
               : <TodoComponent
                 todos={todos}
-                deleteTodo={(id) => setTodos(todos.filter((itm) => itm.id !== id))}
+                // deleteTodo={(id) => setTodos(todos.filter((itm) => itm.id !== id))}
               />
             }
           </List>
