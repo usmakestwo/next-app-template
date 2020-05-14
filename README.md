@@ -31,22 +31,28 @@ You can check out [the Next.js GitHub repository](https://github.com/zeit/next.j
 - Serves app using Fastify
 - Adds support for Material Design
 - Deployment ready with Docker
+- Github Action for running test
 - Easy to understand folder structure
 
     ```markdown
     Project Structure
-    |__ server.js
-    |__ .eslintrc.js
-    |__ .build-deploy.sh
-    |__ .next
-    |__ server.js
     |__ api
     |__ components
+    |__ config
+    |__ coverage
+    |__ mocks
     |__ pages
     |__ public
+    |__ scripts
+    |__ tests
     |__ utils
+    |__ server.js
     ```
 
 - Simple unit testing in mind
     - Jest as the test runner
     - Enzyme as a testing utility
+
+## Roadmap
+- [ ] Add Github Pages to Template
+- [ ] Find a good venue to promote and gather feedback
