@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "dist": "next export",
-    "test": "jest",
+    "test": "jest --coverage",
     "build-docker": "docker build -t next-app-template .",
     "run-docker": "docker run --rm -it -p 3000:3000 next-app-template"
   },
@@ -26,6 +26,7 @@
     "@babel/core": "^7.9.6",
     "@babel/register": "^7.9.0",
     "@testing-library/react": "^10.0.4",
+    "@testing-library/react-hooks": "^3.2.1",
     "babel-jest": "^26.0.1",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",

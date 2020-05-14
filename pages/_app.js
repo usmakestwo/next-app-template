@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable class-methods-use-this */
+/* istanbul ignore file */
 import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'

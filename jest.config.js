@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* istanbul ignore file */
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
@@ -23,6 +24,7 @@ module.exports = {
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
+    '!**/coverage/**',
   ],
 
   // The directory where Jest should output its coverage files
@@ -31,6 +33,7 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '/node_modules/',
+    '/coverage/',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports

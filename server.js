@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-shadow */
 /* eslint-disable no-console */
+/* istanbul ignore file */
 const fastify = require('fastify')({ logger: true })
 const Next = require('next')
 
