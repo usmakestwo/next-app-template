@@ -28,6 +28,7 @@ You can check out [the Next.js GitHub repository](https://github.com/zeit/next.j
 - Eslint with support for React and ES6
 - Serves app using Fastify
 - Adds support for Material Design
+- Deployment ready with Docker
 - Easy to understand folder structure
 
     ```markdown
