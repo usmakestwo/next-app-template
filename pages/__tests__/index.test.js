@@ -11,7 +11,7 @@ describe('<IndexPage />', () => {
     ReactDOM.unmountComponentAtNode(div)
   })
 
-  it.only('App loads with inital state of []', () => {
+  it('App loads with inital state of []', () => {
     const wrapper = mount(<App />)
     expect(wrapper.find(Typography)).toHaveLength(2)
   })

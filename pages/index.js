@@ -11,6 +11,9 @@ import List from '@material-ui/core/List'
 import todoAPI from '../api/todo'
 import TodoComponent from '../components/Todo/Todo'
 
+/**
+ * Main Index Page to render on homepage
+ */
 function IndexPage() {
   const [todos, setTodos] = useState([])
   const [isLoading, setIsLoading] = useState(false)

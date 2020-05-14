@@ -21,6 +21,7 @@ module.exports = {
     beforeAll: 'readonly',
     expect: 'readonly',
     describe: 'readonly',
+    jest: 'readonly',
   },
   parserOptions: {
     ecmaFeatures: {
