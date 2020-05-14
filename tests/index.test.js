@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Typography from '@material-ui/core/Typography'
 import { mount } from 'enzyme'
-import App from '../index'
+import App from '../pages/index'
 
 describe('<IndexPage />', () => {
   it('renders without crashing', () => {

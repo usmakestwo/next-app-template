@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "dist": "next export",
-    "test": "jest"
+    "test": "jest",
+    "build-docker": "docker build -t next-app-template .",
+    "run-docker": "docker run --rm -it -p 3000:3000 next-app-template"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.14",

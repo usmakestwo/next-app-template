@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-shadow */
 /* eslint-disable no-console */
-const fastify = require('fastify')({ logger: { level: 'error' } })
+const fastify = require('fastify')({ logger: true })
 const Next = require('next')
 
 const { version } = require('./package.json')
@@ -40,7 +40,8 @@ fastify.register((fastify, opts, next) => {
     .catch((err) => next(err))
 })
 
-fastify.listen(port, (err) => {
+// We have to specify 0.0.0.0 to be available IPv4 interfaces eg. Docker
+fastify.listen(port, '0.0.0.0', (err) => {
   if (err) throw err
   console.log(`> Ready on http://localhost:${port}`)
 })
