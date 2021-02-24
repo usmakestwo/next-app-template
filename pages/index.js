@@ -18,9 +18,9 @@ function IndexPage() {
   const [todos, setTodos] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   // Fetch todos from API
-  const fetchData = async () => {
+  const fetchData = async (external) => {
     setIsLoading(true)
-    const result = await todoAPI()
+    const result = await todoAPI(external)
     setTodos(result)
     setIsLoading(false)
   }
@@ -32,6 +32,9 @@ function IndexPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Grid container>
+        <Grid item xs={12}>
+          <p> Debug Center: </p>
+        </Grid>
         <Grid item xs={6}>
           <Typography variant="h1" component="h1" gutterBottom>
             Hello
@@ -42,17 +45,23 @@ function IndexPage() {
             World
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <Button variant="contained" color="primary" onClick={() => fetchData()}>
-            Fetch Data
+            Fetch Data - Internal
           </Button>
         </Grid>
+        <Grid item xs={6}>
+          <Button variant="contained" color="primary" onClick={() => fetchData(true)}>
+            Fetch Data - External
+          </Button>
+        </Grid>
+
         <Grid item xs={12} md={6}>
           <List>
             {isLoading ? <CircularProgress />
               : <TodoComponent
                 todos={todos}
-                // deleteTodo={(id) => setTodos(todos.filter((itm) => itm.id !== id))}
+                deleteTodo={(id) => setTodos(todos.filter((itm) => itm.id !== id))}
               />
             }
           </List>

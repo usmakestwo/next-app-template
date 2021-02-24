@@ -4,11 +4,13 @@
 /* istanbul ignore file */
 const fastify = require('fastify')({ logger: true })
 const Next = require('next')
+const fetch = require('node-fetch')
 
 const { version } = require('./package.json')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
+
 
 fastify.register((fastify, opts, next) => {
   const app = Next({ dev })
@@ -24,6 +26,16 @@ fastify.register((fastify, opts, next) => {
 
       fastify.get('/version', (req, reply) => {
         reply.send({ version })
+      })
+
+      fastify.get('/api/todos', async (req, reply) => {
+        try {
+          const res = await fetch('http://jsonplaceholder.typicode.com/todos')
+          reply.send(await res.json())
+        } catch (e) {
+          console.log(e)
+          reply.send(e)
+        }
       })
 
       fastify.get('/*', async (req, reply) => {
