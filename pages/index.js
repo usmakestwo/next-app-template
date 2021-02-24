@@ -6,10 +6,15 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import Paper from '@material-ui/core/Paper'
 import List from '@material-ui/core/List'
 /** Custom Components */
 import todoAPI from '../api/todo'
 import TodoComponent from '../components/Todo/Todo'
+
+// Global Variables
+const perfMarkerA = 'performance-marker-a'
+const perfMarkerB = 'performance-marker-b'
 
 /**
  * Main Index Page to render on homepage
@@ -17,12 +22,19 @@ import TodoComponent from '../components/Todo/Todo'
 function IndexPage() {
   const [todos, setTodos] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [performance, setPerformance] = useState(0)
   // Fetch todos from API
   const fetchData = async (external) => {
+    window.performance.mark(perfMarkerA)
     setIsLoading(true)
     const result = await todoAPI(external)
+    window.performance.mark(perfMarkerB)
+    const { duration } = window.performance.measure('Measure A to B', perfMarkerA, perfMarkerB)
+    setPerformance(duration)
     setTodos(result)
     setIsLoading(false)
+    window.performance.clearMarks()
+    window.performance.clearMeasures()
   }
   return (
     <React.Fragment>
@@ -33,7 +45,12 @@ function IndexPage() {
       </Head>
       <Grid container>
         <Grid item xs={12}>
-          <p> Debug Center: </p>
+          <Paper elevation={3}>
+            <Typography variant="subtitle2" gutterBottom>
+              Debug Information
+            </Typography>
+            <p> Call Duration: {Math.round(performance)} ms </p>
+          </Paper>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h1" component="h1" gutterBottom>
